@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-2pod
+spec:
+  containers:
+  - name: nginx-container
+    image: yuh6513/web-server:1.0
+    # command: ["/bin/sleep"] #DockerfileのENTRYPOINTに対応
+    # args: ["3600"] #DockerfileのCMDに対応
+  - name: api-container
+    image: yuh6513/api-server:1.0
+    args: ["-str", "Override!"]
